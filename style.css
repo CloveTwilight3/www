@@ -1,10 +1,4 @@
-/* Font setup - Comic Code with fallbacks */
-@font-face {
-    font-family: 'Comic Code';
-    src: local('Comic Code'), local('ComicCode');
-    font-display: swap;
-}
-
+/* Comic Sans font stack */
 :root {
     --twilight-dark: #2a1b3d;
     --twilight-medium: #44318d;
@@ -24,7 +18,7 @@
 }
 
 body {
-    font-family: 'Comic Code', 'JetBrains Mono', 'Courier New', monospace;
+    font-family: 'Comic Sans MS', 'Comic Sans', cursive, sans-serif;
     background: linear-gradient(135deg, var(--twilight-dark) 0%, var(--twilight-medium) 100%);
     color: var(--text-light);
     line-height: 1.6;
