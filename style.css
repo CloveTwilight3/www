@@ -165,9 +165,11 @@ header {
     font-weight: 400;
 }
 
+/* Images */
+
 .contact-icon {
-    width: 20px;
-    height: 20px;
+    width: 16px;
+    height: 16px;
     vertical-align: middle;
     margin-right: 8px;
     opacity: 0.8;
@@ -176,6 +178,22 @@ header {
 
 .contact-icon:hover {
     opacity: 1;
+}
+
+.profile-image {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    border: 3px solid var(--butterfly-purple);
+    margin: 0 auto 20px;
+    display: block;
+    box-shadow: 0 0 20px rgba(163, 136, 238, 0.3);
+    transition: transform 0.3s ease;
+}
+
+.profile-image:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 30px rgba(163, 136, 238, 0.5);
 }
 
 /* Footer */
