@@ -1,0 +1,204 @@
+/* Font setup - Comic Code with fallbacks */
+@font-face {
+    font-family: 'Comic Code';
+    src: local('Comic Code'), local('ComicCode');
+    font-display: swap;
+}
+
+:root {
+    --twilight-dark: #2a1b3d;
+    --twilight-medium: #44318d;
+    --twilight-light: #6b5b95;
+    --butterfly-purple: #9b7cb6;
+    --sugar-pink: #f8d7da;
+    --sugar-cream: #fff8dc;
+    --text-light: #f5f5f5;
+    --text-muted: #d1c7d8;
+    --accent-glow: #a388ee;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Comic Code', 'JetBrains Mono', 'Courier New', monospace;
+    background: linear-gradient(135deg, var(--twilight-dark) 0%, var(--twilight-medium) 100%);
+    color: var(--text-light);
+    line-height: 1.6;
+    min-height: 100vh;
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Sugar sprinkles decoration */
+.sugar-sprinkles {
+    position: relative;
+    height: 20px;
+    overflow: hidden;
+}
+
+.sugar-sprinkles::before {
+    content: "✦ ✧ ⋆ ✦ ✧ ⋆ ✦ ✧ ⋆";
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 200%;
+    color: var(--sugar-pink);
+    opacity: 0.6;
+    font-size: 12px;
+    animation: sprinkle-drift 15s linear infinite;
+}
+
+@keyframes sprinkle-drift {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(50%); }
+}
+
+header {
+    text-align: center;
+    margin-bottom: 40px;
+    position: relative;
+}
+
+.main-title {
+    font-size: 2.5rem;
+    font-weight: 400;
+    color: var(--sugar-cream);
+    margin: 20px 0;
+    text-shadow: 0 0 20px var(--accent-glow);
+}
+
+.butterfly-accent {
+    font-size: 2rem;
+    margin-top: 15px;
+    animation: butterfly-float 4s ease-in-out infinite;
+}
+
+@keyframes butterfly-float {
+    0%, 100% { transform: translateY(0px) rotate(0deg); }
+    50% { transform: translateY(-10px) rotate(3deg); }
+}
+
+/* Navigation */
+.nav-menu {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    margin-bottom: 50px;
+    flex-wrap: wrap;
+}
+
+.nav-link {
+    color: var(--text-muted);
+    text-decoration: none;
+    padding: 10px 15px;
+    border-radius: 20px;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.nav-link:hover {
+    color: var(--sugar-cream);
+    background: rgba(163, 136, 238, 0.2);
+    transform: translateY(-2px);
+}
+
+.nav-link:hover::after {
+    content: "✦";
+    position: absolute;
+    top: -5px;
+    right: -5px;
+    color: var(--sugar-pink);
+    font-size: 10px;
+}
+
+/* Main content */
+.section {
+    margin-bottom: 60px;
+    padding: 30px;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 15px;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    scroll-margin-top: 20px;
+}
+
+.section h2 {
+    color: var(--butterfly-purple);
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+    font-weight: 400;
+}
+
+.section h2::after {
+    content: " 🦋";
+    opacity: 0.7;
+    font-size: 0.8em;
+}
+
+.section p {
+    color: var(--text-muted);
+    margin-bottom: 15px;
+    font-size: 1rem;
+}
+
+/* FAQ specific styling */
+.faq-item {
+    margin-bottom: 25px;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.03);
+    border-radius: 10px;
+    border-left: 3px solid var(--butterfly-purple);
+}
+
+.faq-item h3 {
+    color: var(--accent-glow);
+    margin-bottom: 10px;
+    font-size: 1.2rem;
+    font-weight: 400;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    margin-top: 60px;
+    padding: 30px 0;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+footer p {
+    color: var(--text-muted);
+    font-size: 0.9rem;
+}
+
+/* Responsive design */
+@media (max-width: 600px) {
+    .main-title {
+        font-size: 2rem;
+    }
+    
+    .nav-menu {
+        gap: 15px;
+    }
+    
+    .section {
+        padding: 20px;
+        margin-bottom: 30px;
+    }
+    
+    .container {
+        padding: 15px;
+    }
+}
+
+/* Smooth scrolling for anchor links */
+html {
+    scroll-behavior: smooth;
+}
