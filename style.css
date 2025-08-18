@@ -1,3 +1,36 @@
+/* Comic Code font declarations */
+@font-face {
+    font-family: 'Comic Code';
+    src: url('https://plural.clovetwilight3.co.uk/fonts/ComicCode-Regular_2022-05-24-151938_hsmz.woff2') format('woff2'),
+         url('https://plural.clovetwilight3.co.uk/fonts/ComicCode-Regular_2022-05-24-151938_hsmz.woff') format('woff');
+    font-weight: 400;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Comic Code';
+    src: url('https://plural.clovetwilight3.co.uk/fonts/ComicCode-Italic_2022-05-24-151939_rdtu.woff2') format('woff2'),
+         url('https://plural.clovetwilight3.co.uk/fonts/ComicCode-Italic_2022-05-24-151939_rdtu.woff') format('woff');
+    font-weight: 400;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Comic Code';
+    src: url('https://plural.clovetwilight3.co.uk/fonts/ComicCode-Medium_2022-05-24-151941_ugqm.woff2') format('woff2'),
+         url('https://plural.clovetwilight3.co.uk/fonts/ComicCode-Medium_2022-05-24-151941_ugqm.woff') format('woff');
+    font-weight: 500;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Comic Code';
+    src: url('https://plural.clovetwilight3.co.uk/fonts/ComicCode-Bold_2022-05-24-152309_zqkm.woff2') format('woff2'),
+         url('https://plural.clovetwilight3.co.uk/fonts/ComicCode-Bold_2022-05-24-152309_zqkm.woff') format('woff');
+    font-weight: 700;
+    font-style: normal;
+}
+
 /* Comic Sans font stack */
 :root {
     --twilight-dark: #2a1b3d;
@@ -18,11 +51,16 @@
 }
 
 body {
-    font-family: 'Comic Sans MS', 'Comic Sans', cursive, sans-serif;
+    font-family: 'Comic Code', 'Comic Sans MS', 'Comic Sans', monospace, sans-serif;
     background: linear-gradient(135deg, var(--twilight-dark) 0%, var(--twilight-medium) 100%);
     color: var(--text-light);
     line-height: 1.6;
     min-height: 100vh;
+}
+
+/* Code elements specifically use Comic Code */
+code, pre {
+    font-family: 'Comic Code', 'Courier New', monospace;
 }
 
 .container {
