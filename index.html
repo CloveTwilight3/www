@@ -30,7 +30,23 @@
 </head>
 
 <body>
-    <div class="container">
+    <!-- Loading Screen -->
+    <div id="loading-screen" class="loading-screen">
+        <div class="loading-content">
+            <div class="bouncing-diamonds">
+                <span class="diamond">✦</span>
+                <span class="diamond">✧</span>
+                <span class="diamond">⋆</span>
+                <span class="diamond">✦</span>
+                <span class="diamond">✧</span>
+            </div>
+            <div class="rotating-donut">🍩</div>
+            <p class="loading-text">Loading magical content...</p>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <div id="main-content" class="container hidden">
         <header class="fade-in-element">
             <div class="sugar-sprinkles"></div>
             <img src="logos/avatar.jpg" alt="Clove's Profile" class="profile-image">
@@ -98,7 +114,7 @@
                         <img src="logos/therian.png" alt="Therian Flag" class="flag-image">
                         <div class="flag-tooltip">I am a Therian and I am a black cat therotype</div>
                     </div>
-                <!-- Add more flags as needed -->
+                </div>
             </section>
             
             <section id="about" class="section fade-in-element">
