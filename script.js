@@ -104,7 +104,7 @@ function setupTransitionButtons() {
                 '--accent-glow': '#b388ee'
             };
             
-            performTransition(url, systerColors, 'Flying to syster\'s realm...', '🦋');
+            performTransition(url, systerColors, 'Changing to blossoming content...', '🪻');
         });
     }
 
