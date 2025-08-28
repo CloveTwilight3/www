@@ -33,12 +33,12 @@
 
 /* Comic Sans font stack */
 :root {
-    --twilight-dark: #003f5c;   /* replaced #2a1b3d */
-    --twilight-medium: #2f6690; /* new medium variant */
-    --twilight-light: #84a9ac;  /* new light variant */
-    --sprinkles-purple: #9b7cb6;
-    --diamond-pink: #f8d7da;
-    --diamond-cream: #fff8dc;
+    --twilight-dark: #2a1b3d;
+    --twilight-medium: #2f6690
+    --twilight-light: #6b5b95;
+    --butterfly-purple: #9b7cb6;
+    --sugar-pink: #f8d7da;
+    --sugar-cream: #fff8dc;
     --text-light: #f5f5f5;
     --text-muted: #d1c7d8;
     --accent-glow: #a388ee;
@@ -124,7 +124,7 @@ code, pre {
     }
 }
 
-.rotating-sprinkles {
+.rotating-butterfly {
     font-size: 3rem;
     animation: rotate 2s linear infinite;
     margin: 20px 0;
@@ -169,7 +169,7 @@ code, pre {
     width: 60px;
     height: 60px;
     border-radius: 50%;
-    border: 3px solid var(--sprinkles-purple);
+    border: 3px solid var(--butterfly-purple);
     box-shadow: 0 4px 15px rgba(163, 136, 238, 0.3);
     transition: all 0.3s ease;
     display: block;
@@ -198,7 +198,7 @@ code, pre {
     opacity: 0;
     visibility: hidden;
     transition: all 0.3s ease;
-    border: 1px solid var(--sprinkles-purple);
+    border: 1px solid var(--butterfly-purple);
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
 }
 
@@ -274,7 +274,7 @@ code, pre {
     width: 60px;
     height: 60px;
     border-radius: 50%;
-    border: 3px solid var(--sprinkles-purple);
+    border: 3px solid var(--butterfly-purple);
     box-shadow: 0 4px 15px rgba(163, 136, 238, 0.3);
     transition: all 0.3s ease;
     display: block;
@@ -303,7 +303,7 @@ code, pre {
     opacity: 0;
     visibility: hidden;
     transition: all 0.3s ease;
-    border: 1px solid var(--sprinkles-purple);
+    border: 1px solid var(--butterfly-purple);
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
 }
 
@@ -384,20 +384,20 @@ code, pre {
 .fade-in-element:nth-child(4) { transition-delay: 0.4s; }
 .fade-in-element:nth-child(5) { transition-delay: 0.5s; }
 
-/* Diamond sprinkles decoration */
-.diamond-sprinkles {
+/* diamond butterfly decoration */
+.diamond-butterfly {
     position: relative;
     height: 20px;
     overflow: hidden;
 }
 
-.diamond-sprinkles::before {
+.diamond-butterfly::before {
     content: "✦ ✧ ⋆ ✦ ✧ ⋆ ✦ ✧ ⋆";
     position: absolute;
     top: 0;
     left: -100%;
     width: 200%;
-    color: var(--diamond-pink);
+    color: var(--sugar-pink);
     opacity: 0.6;
     font-size: 12px;
     animation: sprinkle-drift 15s linear infinite;
@@ -417,18 +417,18 @@ header {
 .main-title {
     font-size: 2.5rem;
     font-weight: 400;
-    color: var(--diamond-cream);
+    color: var(--sugar-cream);
     margin: 20px 0;
     text-shadow: 0 0 20px var(--accent-glow);
 }
 
-.sprinkles-accent {
+.butterfly-accent {
     font-size: 2rem;
     margin-top: 15px;
-    animation: sprinkles-float 4s ease-in-out infinite;
+    animation: butterfly-float 4s ease-in-out infinite;
 }
 
-@keyframes sprinkles-float {
+@keyframes butterfly-float {
     0%, 100% { transform: translateY(0px) rotate(0deg); }
     50% { transform: translateY(-10px) rotate(3deg); }
 }
@@ -453,7 +453,7 @@ header {
 }
 
 .nav-link:hover {
-    color: var(--diamond-cream);
+    color: var(--sugar-cream);
     background: rgba(163, 136, 238, 0.2);
     transform: translateY(-2px);
 }
@@ -479,7 +479,7 @@ header {
 }
 
 .section h2 {
-    color: var(--sprinkles-purple);
+    color: var(--butterfly-purple);
     font-size: 1.8rem;
     margin-bottom: 20px;
     font-weight: 400;
@@ -500,7 +500,7 @@ header {
 /* Pronoun card styling */
 .pronoun-card {
     background: rgba(163, 136, 238, 0.1);
-    border: 1px solid var(--sprinkles-purple);
+    border: 1px solid var(--butterfly-purple);
     border-radius: 12px;
     padding: 20px;
     margin-bottom: 20px;
@@ -520,7 +520,7 @@ header {
 }
 
 .pronoun-examples strong {
-    color: var(--sprinkles-purple);
+    color: var(--butterfly-purple);
 }
 
 /* Interests grid */
@@ -535,7 +535,7 @@ header {
     background: rgba(255, 255, 255, 0.03);
     padding: 15px;
     border-radius: 10px;
-    border-left: 3px solid var(--diamond-pink);
+    border-left: 3px solid var(--sugar-pink);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
@@ -545,7 +545,7 @@ header {
 }
 
 .interest-item h4 {
-    color: var(--sprinkles-purple);
+    color: var(--butterfly-purple);
     margin-bottom: 8px;
     font-size: 1.1rem;
 }
@@ -571,7 +571,7 @@ header {
 }
 
 .project-item h4 {
-    color: var(--sprinkles-purple);
+    color: var(--butterfly-purple);
     margin-bottom: 10px;
     font-size: 1.2rem;
 }
@@ -594,7 +594,7 @@ header {
 }
 
 .contact-links strong {
-    color: var(--sprinkles-purple);
+    color: var(--butterfly-purple);
 }
 
 /* FAQ specific styling */
@@ -603,7 +603,7 @@ header {
     padding: 20px;
     background: rgba(255, 255, 255, 0.03);
     border-radius: 10px;
-    border-left: 3px solid var(--sprinkles-purple);
+    border-left: 3px solid var(--butterfly-purple);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
@@ -633,7 +633,7 @@ header {
     padding: 15px;
     border-radius: 8px;
     margin: 15px 0;
-    border-left: 3px solid var(--diamond-pink);
+    border-left: 3px solid var(--sugar-pink);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
@@ -643,7 +643,7 @@ header {
 }
 
 .resource-item h4 {
-    color: var(--sprinkles-purple);
+    color: var(--butterfly-purple);
     margin-bottom: 10px;
     font-size: 1.1rem;
 }
@@ -655,7 +655,7 @@ header {
 }
 
 .resource-item a:hover {
-    color: var(--diamond-cream);
+    color: var(--sugar-cream);
     text-decoration: underline;
 }
 
@@ -681,7 +681,7 @@ header {
     width: 120px;
     height: 120px;
     border-radius: 50%;
-    border: 3px solid var(--sprinkles-purple);
+    border: 3px solid var(--butterfly-purple);
     margin: 0 auto 20px;
     display: block;
     box-shadow: 0 0 20px rgba(163, 136, 238, 0.3);
@@ -698,7 +698,7 @@ header {
     max-width: 100%;
     height: auto;
     border-radius: 10px;
-    border: 2px solid var(--sprinkles-purple);
+    border: 2px solid var(--butterfly-purple);
     box-shadow: 0 4px 15px rgba(163, 136, 238, 0.2);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
@@ -796,7 +796,7 @@ html {
     width: 60px;
     height: 60px;
     border-radius: 50%;
-    border: 3px solid var(--sprinkles-purple);
+    border: 3px solid var(--butterfly-purple);
     box-shadow: 0 4px 15px rgba(163, 136, 238, 0.3);
     transition: all 0.3s ease;
     display: flex;
@@ -831,7 +831,7 @@ html {
     opacity: 0;
     visibility: hidden;
     transition: all 0.3s ease;
-    border: 1px solid var(--sprinkles-purple);
+    border: 1px solid var(--butterfly-purple);
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
 }
 
