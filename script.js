@@ -131,6 +131,28 @@ function setupTransitionButtons() {
             performTransition(url, systemColors, 'Connecting to system hub...', '⭐');
         });
     }
+
+    // Github button transition (deeper twilight variant)
+    const githubButton = document.querySelector('.github-button a');
+    if (githubButton) {
+        githubButton.addEventListener('click', (e) => {
+            e.preventDefault();
+            const url = githubButton.href;
+            
+            // System colors (darker, more mysterious)
+            const githubColors = {
+                '--cyan-dark': '#1a0f2e',
+                '--cyan-medium': '#2f1b4a',
+                '--cyan-light': '#5b4b75',
+                '--lavender-purple': '#7b6cb6',
+                '--diamond-pink': '#d8c7da',
+                '--diamond-cream': '#f0e8dc',
+                '--accent-glow': '#8388ee'
+            };
+            
+            performTransition(url, githubColors, 'Loading Github...', '🖥️');
+        });
+    }
 }
 
 function performTransition(url, colorScheme, loadingText, emoji = '✦') {
