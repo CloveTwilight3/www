@@ -176,10 +176,14 @@ function performTransition(url, colorScheme, loadingText, emoji = '✦') {
                 align-items: center;
                 z-index: 10000;
                 opacity: 0;
+                cusor: none;
+                pointer-events: none;
             }
             
             .transition-overlay.fade-in {
                 opacity: 1;
+                cusor: none;
+                pointer-events: none;
             }
             
             .transition-content {
