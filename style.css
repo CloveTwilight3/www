@@ -125,7 +125,7 @@ code, pre {
     }
 }
 
-.rotating-lavender {
+.rotating-doughut {
     font-size: 3rem;
     animation: rotate 2s linear infinite;
     margin: 20px 0;
@@ -423,13 +423,13 @@ header {
     text-shadow: 0 0 20px var(--accent-glow);
 }
 
-.lavender-accent {
+.butterfly-accent {
     font-size: 2rem;
     margin-top: 15px;
-    animation: lavender-float 4s ease-in-out infinite;
+    animation: butterfly-float 4s ease-in-out infinite;
 }
 
-@keyframes lavender-float {
+@keyframes butterfly-float {
     0%, 100% { transform: translateY(0px) rotate(0deg); }
     50% { transform: translateY(-10px) rotate(3deg); }
 }
