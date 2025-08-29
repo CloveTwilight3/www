@@ -467,6 +467,8 @@ header {
     gap: 25px;
     max-width: 600px;
     margin: 0 auto;
+    overflow: visible;
+    row-gap: 60px;
 }
 
 .flag-item {
@@ -476,10 +478,13 @@ header {
     align-items: center;
     cursor: pointer;
     transition: transform 0.3s ease;
+    overflow: visible;
 }
 
 .flag-item:hover {
     transform: translateY(-5px);
+    z-index: 20;
+    position: relative;
 }
 
 .flag-image {
@@ -519,6 +524,8 @@ header {
     text-align: center;
     line-height: 1.3;
     pointer-events: none;
+    top: 100%;
+    margin-top: 10px;
 }
 
 .flag-item:hover .flag-tooltip {
