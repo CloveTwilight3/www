@@ -438,6 +438,8 @@ header {
 
 /* Flags section styling */
 .flags-section {
+    position: relative;
+    z-index: 100; /* ensure above other content */
     margin-bottom: 40px;
     padding: 25px;
     background: rgba(255, 255, 255, 0.05);
@@ -468,9 +470,11 @@ header {
     max-width: 600px;
     margin: 0 auto;
     overflow: visible; /* let tooltips expand outside grid */
+    justify-content: center; /* center grid items */
 }
 
 .flag-item {
+    width: 140px; 
     position: relative;
     display: inline-flex;
     flex-direction: column;
