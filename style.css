@@ -57,6 +57,7 @@ body {
     color: var(--text-light);
     line-height: 1.6;
     min-height: 100vh;
+    cursor: url('logos/cursor.png'), auto;
 }
 
 /* Code elements specifically use Comic Code */
@@ -83,6 +84,7 @@ code, pre {
     align-items: center;
     z-index: 9999;
     transition: opacity 0.5s ease;
+    cursor: none;
 }
 
 .loading-screen.fade-out {
@@ -93,6 +95,18 @@ code, pre {
 .loading-content {
     text-align: center;
     color: var(--text-light);
+}
+
+/* Animated loading cursor styles */
+#loading-cursor {
+    position: fixed;
+    width: 32px;
+    height: 32px;
+    pointer-events: none;
+    z-index: 10000;
+    display: none; /* hidden until JS starts it */
+    background-size: cover;
+    background-repeat: no-repeat;
 }
 
 .bouncing-diamonds {
@@ -176,7 +190,7 @@ code, pre {
     box-shadow: 0 4px 15px rgba(163, 136, 238, 0.3);
     transition: all 0.3s ease;
     display: block;
-    cursor: pointer;
+    cursor: url('logos/pointer.png'), pointer;
 }
 
 .syster-image:hover {
@@ -281,7 +295,7 @@ code, pre {
     box-shadow: 0 4px 15px rgba(163, 136, 238, 0.3);
     transition: all 0.3s ease;
     display: block;
-    cursor: pointer;
+    cursor: url('logos/pointer.png'), pointer;
 }
 
 .system-image:hover {
@@ -438,8 +452,6 @@ header {
 
 /* Flags section styling */
 .flags-section {
-    position: relative;
-    z-index: 100; /* ensure above other content */
     margin-bottom: 40px;
     padding: 25px;
     background: rgba(255, 255, 255, 0.05);
@@ -448,6 +460,8 @@ header {
     border: 1px solid rgba(255, 255, 255, 0.1);
     text-align: center;
     scroll-margin-top: 20px;
+    position: relative; /* keep tooltips above other sections */
+    z-index: 100;
 }
 
 .flags-section h2 {
@@ -465,28 +479,30 @@ header {
 
 .flags-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
     gap: 25px;
     max-width: 600px;
     margin: 0 auto;
-    overflow: visible; /* let tooltips expand outside grid */
-    justify-content: center; /* center grid items */
+    overflow: visible;
+    justify-items: center;
 }
 
 .flag-item {
-    width: 140px; 
     position: relative;
     display: inline-flex;
     flex-direction: column;
     align-items: center;
-    cursor: pointer;
+    cursor: url('logos/pointer.png'), pointer;
     transition: transform 0.3s ease;
-    overflow: visible; /* prevents clipping issues */
+    overflow: visible;
+    width: 140px; /* consistent width */
+    text-align: center;
 }
 
 .flag-item:hover {
     transform: translateY(-5px);
-    z-index: 20; /* bring hovered flag above others */
+    z-index: 20;
+    cursor: url('logos/help.png'), help;
 }
 
 .flag-image {
@@ -508,7 +524,7 @@ header {
 /* Tooltip styling */
 .flag-tooltip {
     position: absolute;
-    top: 100%; /* right below flag */
+    top: 100%;
     left: 50%;
     transform: translateX(-50%);
     margin-top: 8px;
@@ -526,14 +542,14 @@ header {
     visibility: hidden;
     transition: opacity 0.3s ease, transform 0.3s ease;
     white-space: normal;
-    pointer-events: none; /* avoids hover flicker */
+    pointer-events: none;
     z-index: 50;
 }
 
 .flag-item:hover .flag-tooltip {
     opacity: 1;
     visibility: visible;
-    transform: translateX(-50%) translateY(5px); /* smooth slide down */
+    transform: translateX(-50%) translateY(5px);
 }
 
 /* Navigation */
@@ -559,6 +575,7 @@ header {
     color: var(--diamond-cream);
     background: rgba(163, 136, 238, 0.2);
     transform: translateY(-2px);
+    cursor: url('logos/pointer.png'), pointer;
 }
 
 .nav-link:hover::after {
@@ -929,7 +946,7 @@ html {
     justify-content: center;
     background: rgba(42, 27, 61, 0.8);
     backdrop-filter: blur(10px);
-    cursor: pointer;
+    cursor: url('logos/pointer.png'), pointer;
     color: var(--text-light);
 }
 
