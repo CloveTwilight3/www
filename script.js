@@ -95,13 +95,15 @@ function setupTransitionButtons() {
             
             // Syster's twilight color scheme (warmer purples)
             const systerColors = {
-                '--twilight-dark': '#2a1b3d',
-                '--twilight-medium': '#3d2a5c',
-                '--twilight-light': '#8b7cb6',
-                '--butterfly-purple': '#c49bd6',
-                '--sugar-pink': '#f8d7da',
-                '--sugar-cream': '#fff8dc',
-                '--accent-glow': '#b388ee'
+                '--cyan-dark': '#003f5c',
+                '--cyan-medium': '#2f6690',
+                '--cyan-light': '#84a9ac',
+                '--lavender-purple': '#9b7cb6',
+                '--diamond-pink': '#f8d7da',
+                '--diamond-cream': '#fff8dc',
+                '--text-light': '#f5f5f5',
+                '--text-muted': '#d1c7d8',
+                '--accent-glow': '#a388ee'
             };
             
             performTransition(url, systerColors, 'Changing to blossoming content...', '🪻');
@@ -115,29 +117,29 @@ function setupTransitionButtons() {
             e.preventDefault();
             const url = systemButton.href;
             
-            // System twilight colors (darker, more mysterious)
+            // System colors (darker, more mysterious)
             const systemColors = {
-                '--twilight-dark': '#1a0f2e',
-                '--twilight-medium': '#2f1b4a',
-                '--twilight-light': '#5b4b75',
-                '--butterfly-purple': '#7b6cb6',
-                '--sugar-pink': '#d8c7da',
-                '--sugar-cream': '#f0e8dc',
+                '--cyan-dark': '#1a0f2e',
+                '--cyan-medium': '#2f1b4a',
+                '--cyan-light': '#5b4b75',
+                '--lavender-purple': '#7b6cb6',
+                '--diamond-pink': '#d8c7da',
+                '--diamond-cream': '#f0e8dc',
                 '--accent-glow': '#8388ee'
             };
             
-            performTransition(url, systemColors, 'Connecting to system depths...', '⭐');
+            performTransition(url, systemColors, 'Connecting to system hub...', '⭐');
         });
     }
 }
 
 function performTransition(url, colorScheme, loadingText, emoji = '✦') {
-    // Create transition overlay with HARDCODED starting twilight colors
+    // Create transition overlay with HARDCODED starting cyan colors
     const transitionOverlay = document.createElement('div');
     transitionOverlay.className = 'transition-overlay';
     
-    // Set initial hardcoded twilight colors AND transition property
-    transitionOverlay.style.background = 'linear-gradient(135deg, #2a1b3d 0%, #2f6690 100%)';
+    // Set initial hardcoded cyan colors AND transition property
+    transitionOverlay.style.background = 'linear-gradient(135deg, #003f5c 0%, #2f6690 100%)';
     transitionOverlay.style.transition = 'opacity 0.6s ease, background 2s cubic-bezier(0.25, 0.46, 0.45, 0.94)';
     
     // Create loading content
@@ -253,7 +255,7 @@ function performTransition(url, colorScheme, loadingText, emoji = '✦') {
         // Start color transition after overlay is visible
         setTimeout(() => {
             // Transition the overlay background to target colors
-            const targetGradient = `linear-gradient(135deg, ${colorScheme['--twilight-dark']} 0%, ${colorScheme['--twilight-medium']} 100%)`;
+            const targetGradient = `linear-gradient(135deg, ${colorScheme['--cyan-dark']} 0%, ${colorScheme['--cyan-medium']} 100%)`;
             transitionOverlay.style.background = targetGradient;
             
             // Also change the page colors behind it
@@ -280,7 +282,7 @@ function changeColors(colorScheme) {
     });
     
     // Update the background gradient with smooth transition
-    document.body.style.background = `linear-gradient(135deg, ${colorScheme['--twilight-dark']} 0%, ${colorScheme['--twilight-medium']} 100%)`;
+    document.body.style.background = `linear-gradient(135deg, ${colorScheme['--cyan-dark']} 0%, ${colorScheme['--cyan-medium']} 100%)`;
     
     // Clean up transition styles after animation completes
     setTimeout(() => {
@@ -304,7 +306,7 @@ function resetTransitionState() {
     const root = document.documentElement;
     const originalColors = {
         '--twilight-dark': '#2a1b3d',
-        '--twilight-medium': '#2f6690',
+        '--twilight-medium': '#44318d',
         '--twilight-light': '#6b5b95',
         '--butterfly-purple': '#9b7cb6',
         '--sugar-pink': '#f8d7da',

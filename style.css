@@ -31,11 +31,11 @@
     font-style: normal;
 }
 
-/* Comic Sans font stack */
+/* CSS Variables for color scheme */
 :root {
-    --cyan-dark: #2a1b3d;   /* replaced #2a1b3d */
-    --cyan-medium: #44318d; /* new medium variant */
-    --cyan-light: #6b5b95;  /* new light variant */
+    --cyan-dark: #2a1b3d;   
+    --cyan-medium: #44318d; 
+    --cyan-light: #6b5b95;  
     --lavender-purple: #9b7cb6;
     --diamond-pink: #f8d7da;
     --diamond-cream: #fff8dc;
@@ -44,6 +44,7 @@
     --accent-glow: #a388ee;
 }
 
+/* Global Styles */
 * {
     margin: 0;
     padding: 0;
