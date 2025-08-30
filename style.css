@@ -1070,6 +1070,29 @@ html {
     /* smooth slide effect */
 }
 
+/* Back to Top Button */
+#back-to-top {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    font-size: 2rem;
+    color: var(--text-light);
+    background: rgba(0,0,0,0.5);
+    padding: 10px;
+    border-radius: 50%;
+    cursor: url('logos/cursor.png'), auto;
+    text-shadow: 0 0 10px var(--accent-glow), 0 0 20px var(--accent-glow);
+    filter: drop-shadow(0 0 10px var(--accent-glow));
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    z-index: 9999;
+}
+
+#back-to-top.show {
+    opacity: 1;
+}
+
+
 /* Responsive adjustments */
 @media (max-width: 768px) {
 
