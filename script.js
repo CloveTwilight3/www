@@ -2,15 +2,15 @@
 document.addEventListener('DOMContentLoaded', () => {
     // Reset any lingering transition effects from back button navigation
     resetTransitionState();
-    
+
     const loadingScreen = document.getElementById('loading-screen');
     const mainContent = document.getElementById('main-content');
-    
+
     // Hide loading screen after 4 seconds
     setTimeout(() => {
         loadingScreen.classList.add('fade-out');
         mainContent.classList.remove('hidden');
-        
+
         // Remove loading screen from DOM after fade animation
         setTimeout(() => {
             loadingScreen.remove();
@@ -62,13 +62,13 @@ document.addEventListener('DOMContentLoaded', () => {
     navLinks.forEach(link => {
         link.addEventListener('click', (e) => {
             const targetId = link.getAttribute('href');
-            
+
             // Check if it's an external link (starts with http/https) or internal anchor
             if (targetId.startsWith('http') || targetId.startsWith('//')) {
                 // Let external links work normally
                 return;
             }
-            
+
             // Only prevent default for internal anchor links
             e.preventDefault();
             const targetElement = document.querySelector(targetId);
@@ -92,7 +92,7 @@ function setupTransitionButtons() {
         systerButton.addEventListener('click', (e) => {
             e.preventDefault();
             const url = systerButton.href;
-            
+
             // Syster's twilight color scheme (warmer purples)
             const systerColors = {
                 '--cyan-dark': '#003f5c',
@@ -105,7 +105,7 @@ function setupTransitionButtons() {
                 '--text-muted': '#d1c7d8',
                 '--accent-glow': '#a388ee'
             };
-            
+
             performTransition(url, systerColors, 'Changing to blossoming content...', '🪻');
         });
     }
@@ -116,7 +116,7 @@ function setupTransitionButtons() {
         systemButton.addEventListener('click', (e) => {
             e.preventDefault();
             const url = systemButton.href;
-            
+
             // System colors (darker, more mysterious)
             const systemColors = {
                 '--cyan-dark': '#1a0f2e',
@@ -127,7 +127,7 @@ function setupTransitionButtons() {
                 '--diamond-cream': '#f0e8dc',
                 '--accent-glow': '#8388ee'
             };
-            
+
             performTransition(url, systemColors, 'Connecting to system hub...', '⭐');
         });
     }
@@ -138,7 +138,7 @@ function setupTransitionButtons() {
         githubButton.addEventListener('click', (e) => {
             e.preventDefault();
             const url = githubButton.href;
-            
+
             // System colors (darker, more mysterious)
             const githubColors = {
                 '--cyan-dark': '#1a0f2e',
@@ -149,7 +149,7 @@ function setupTransitionButtons() {
                 '--diamond-cream': '#f0e8dc',
                 '--accent-glow': '#8388ee'
             };
-            
+
             performTransition(url, githubColors, 'Loading Github...', '🖥️');
         });
     }
@@ -159,11 +159,11 @@ function performTransition(url, colorScheme, loadingText, emoji = '✦') {
     // Create transition overlay with HARDCODED starting cyan colors
     const transitionOverlay = document.createElement('div');
     transitionOverlay.className = 'transition-overlay';
-    
+
     // Set initial hardcoded cyan colors AND transition property
     transitionOverlay.style.background = 'linear-gradient(135deg, #003f5c 0%, #2f6690 100%)';
     transitionOverlay.style.transition = 'opacity 0.6s ease, background 2s cubic-bezier(0.25, 0.46, 0.45, 0.94)';
-    
+
     // Create loading content
     const transitionContent = document.createElement('div');
     transitionContent.className = 'transition-content';
@@ -178,7 +178,7 @@ function performTransition(url, colorScheme, loadingText, emoji = '✦') {
         </div>
         <p class="transition-text">${loadingText}</p>
     `;
-    
+
     transitionOverlay.appendChild(transitionContent);
     document.body.appendChild(transitionOverlay);
 
@@ -277,17 +277,17 @@ function performTransition(url, colorScheme, loadingText, emoji = '✦') {
     setTimeout(() => {
         // Fade in the overlay
         transitionOverlay.classList.add('fade-in');
-        
+
         // Start color transition after overlay is visible
         setTimeout(() => {
             // Transition the overlay background to target colors
             const targetGradient = `linear-gradient(135deg, ${colorScheme['--cyan-dark']} 0%, ${colorScheme['--cyan-medium']} 100%)`;
             transitionOverlay.style.background = targetGradient;
-            
+
             // Also change the page colors behind it
             changeColors(colorScheme);
         }, 400);
-        
+
         // Navigate after everything is complete
         setTimeout(() => {
             window.location.href = url;
@@ -297,19 +297,19 @@ function performTransition(url, colorScheme, loadingText, emoji = '✦') {
 
 function changeColors(colorScheme) {
     const root = document.documentElement;
-    
+
     // Create longer, smoother color transition animations
     root.style.transition = 'all 1.8s cubic-bezier(0.25, 0.46, 0.45, 0.94)';
     document.body.style.transition = 'background 1.8s cubic-bezier(0.25, 0.46, 0.45, 0.94)';
-    
+
     // Apply new color scheme with smooth transition
     Object.entries(colorScheme).forEach(([property, value]) => {
         root.style.setProperty(property, value);
     });
-    
+
     // Update the background gradient with smooth transition
     document.body.style.background = `linear-gradient(135deg, ${colorScheme['--cyan-dark']} 0%, ${colorScheme['--cyan-medium']} 100%)`;
-    
+
     // Clean up transition styles after animation completes
     setTimeout(() => {
         root.style.transition = '';
@@ -321,13 +321,13 @@ function resetTransitionState() {
     // Remove any existing transition overlays
     const existingOverlays = document.querySelectorAll('.transition-overlay');
     existingOverlays.forEach(overlay => overlay.remove());
-    
+
     // Remove transition styles
     const transitionStyles = document.getElementById('transition-styles');
     if (transitionStyles) {
         transitionStyles.remove();
     }
-    
+
     // Reset CSS custom properties to original twilight values
     const root = document.documentElement;
     const originalColors = {
@@ -341,11 +341,11 @@ function resetTransitionState() {
         '--text-muted': '#d1c7d8',
         '--accent-glow': '#a388ee'
     };
-    
+
     Object.entries(originalColors).forEach(([property, value]) => {
         root.style.setProperty(property, value);
     });
-    
+
     // Reset body background to original twilight gradient
     document.body.style.background = 'linear-gradient(135deg, var(--twilight-dark) 0%, var(--twilight-medium) 100%)';
 }
@@ -355,5 +355,240 @@ window.addEventListener('pageshow', (event) => {
     // If page is loaded from cache (back button), reset transition state
     if (event.persisted) {
         resetTransitionState();
+    }
+});
+
+// ==================== FULL EASTER EGGS ====================
+
+let typedKeys = [];
+let konamiKeys = [];
+let gayKeys = [];
+const doughnutTrigger = 'doughnut';
+const gayTrigger = 'gay';
+const konamiCode = ['ArrowUp', 'ArrowUp', 'ArrowDown', 'ArrowDown', 'ArrowLeft', 'ArrowRight', 'ArrowLeft', 'ArrowRight', 'b', 'a'];
+
+// -------------------- Hint --------------------
+function showHint(message) {
+    const existingHint = document.getElementById('easter-egg-hint');
+    if (existingHint) existingHint.remove();
+
+    const hint = document.createElement('div');
+    hint.id = 'easter-egg-hint';
+    hint.innerText = message;
+    Object.assign(hint.style, {
+        position: 'fixed',
+        bottom: '20px',
+        left: '50%',
+        transform: 'translateX(-50%)',
+        padding: '6px 12px',
+        background: 'rgba(0,0,0,0.7)',
+        color: 'var(--text-light)',
+        fontSize: '16px',
+        borderRadius: '6px',
+        zIndex: 10000,
+        textShadow: '0 0 10px var(--accent-glow)',
+        pointerEvents: 'none',
+        opacity: '0',
+        transition: 'opacity 0.3s ease'
+    });
+    document.body.appendChild(hint);
+    requestAnimationFrame(() => hint.style.opacity = '1');
+    setTimeout(() => {
+        hint.style.opacity = '0';
+        setTimeout(() => hint.remove(), 500);
+    }, 1500);
+}
+
+// -------------------- Doughnut Game --------------------
+function launchDoughnutGame() {
+    if (document.getElementById('doughnut-game')) return;
+
+    const gameContainer = document.createElement('div');
+    gameContainer.id = 'doughnut-game';
+    Object.assign(gameContainer.style, {
+        position: 'fixed', top: 0, left: 0, width: '100%', height: '100%',
+        zIndex: 9999, background: 'rgba(0,0,0,0.7)', overflow: 'hidden'
+    });
+    document.body.appendChild(gameContainer);
+
+    const scoreEl = document.createElement('div');
+    Object.assign(scoreEl.style, {
+        position: 'fixed', top: '10px', left: '10px', color: 'var(--text-light)',
+        fontSize: '24px', zIndex: 10000, textShadow: '0 0 15px var(--accent-glow)'
+    });
+    scoreEl.innerText = 'Score: 0';
+    document.body.appendChild(scoreEl);
+
+    let score = 0;
+    const doughnuts = [];
+
+    function spawnDoughnut() {
+        const d = document.createElement('div');
+        d.innerText = '🍩';
+        Object.assign(d.style, {
+            position: 'absolute',
+            left: Math.random() * window.innerWidth + 'px',
+            top: '-50px',
+            fontSize: `${30 + Math.random() * 20}px`,
+            cursor: 'url("logos/pointer.png"), auto',
+            color: 'var(--text-light)',
+            textShadow: '0 0 10px var(--accent-glow), 0 0 25px var(--accent-glow)'
+        });
+        gameContainer.appendChild(d);
+
+        d.addEventListener('click', () => {
+            d.remove();
+            score++;
+            scoreEl.innerText = `Score: ${score}`;
+        });
+
+        doughnuts.push({ el: d, speed: 2 + Math.random() * 3, sway: Math.random() * 1.5, direction: Math.random() < 0.5 ? -1 : 1 });
+    }
+
+    function updateDoughnuts() {
+        for (let i = doughnuts.length - 1; i >= 0; i--) {
+            const d = doughnuts[i];
+            let top = parseFloat(d.el.style.top);
+            let left = parseFloat(d.el.style.left);
+            d.el.style.top = top + d.speed + 'px';
+            d.el.style.left = left + d.sway * d.direction + 'px';
+            if (Math.random() < 0.01) d.direction *= -1;
+            if (top > window.innerHeight) {
+                d.el.remove();
+                doughnuts.splice(i, 1);
+            }
+        }
+    }
+
+    function loop() {
+        if (Math.random() < 0.03) spawnDoughnut();
+        updateDoughnuts();
+        requestAnimationFrame(loop);
+    }
+
+    loop();
+
+    window.addEventListener('keydown', function escListener(e) {
+        if (e.key === 'Escape') {
+            gameContainer.remove();
+            scoreEl.remove();
+            window.removeEventListener('keydown', escListener);
+        }
+    });
+}
+
+// -------------------- Butterfly Rain --------------------
+function launchButterflies() {
+    const numButterflies = 30;
+    for (let i = 0; i < numButterflies; i++) {
+        const b = document.createElement('div');
+        b.innerText = '🦋';
+        Object.assign(b.style, {
+            position: 'fixed',
+            top: '-50px',
+            left: Math.random() * window.innerWidth + 'px',
+            fontSize: `${20 + Math.random() * 30}px`,
+            zIndex: 9999,
+            pointerEvents: 'none',
+            color: 'var(--text-light)',
+            textShadow: '0 0 10px var(--accent-glow), 0 0 25px var(--accent-glow)',
+            filter: 'drop-shadow(0 0 10px var(--accent-glow))',
+            transform: `rotate(${Math.random() * 360}deg)`
+        });
+        document.body.appendChild(b);
+
+        let startX = parseFloat(b.style.left);
+        let y = -50;
+        const speed = 2 + Math.random() * 2;
+        const swayAmplitude = 20 + Math.random() * 30;
+        const swayFrequency = 0.02 + Math.random() * 0.02;
+        let rotation = Math.random() * 360;
+
+        function animate(time = 0) {
+            y += speed;
+            const sway = Math.sin(time * swayFrequency) * swayAmplitude;
+            b.style.top = y + 'px';
+            b.style.left = startX + sway + 'px';
+            rotation += Math.random() * 2 - 1;
+            b.style.transform = `rotate(${rotation}deg)`;
+            if (y < window.innerHeight + 50) {
+                requestAnimationFrame(() => animate(time + 1));
+            } else {
+                b.remove();
+            }
+        }
+
+        animate();
+    }
+}
+
+// -------------------- Gay Video Easter Egg --------------------
+const gayVideo = document.createElement('video');
+gayVideo.src = 'https://www.doughmination.win/common/gay.mp4'; //use cdn for performance
+gayVideo.preload = 'auto'; // Preload video data
+gayVideo.loop = true;       // Loop when playing
+gayVideo.style.display = 'none'; // Hidden initially
+gayVideo.muted = true;      // Ensure no accidental audio while hidden
+gayVideo.type = 'video/mp4'; // Specify video type for better browser hints
+document.body.appendChild(gayVideo);
+
+function launchGayVideo() {
+    gayVideo.currentTime = 0;       // Start from beginning
+    gayVideo.style.display = 'block';
+    
+    // Ensure it covers entire viewport
+    Object.assign(gayVideo.style, {
+        position: 'fixed',
+        top: 0,
+        left: 0,
+        width: '100%',
+        height: '100%',
+        objectFit: 'cover',
+        zIndex: 9999
+    });
+    
+    gayVideo.muted = false;         // Unmute
+    gayVideo.play();
+
+    window.addEventListener('keydown', function escListener(e) {
+        if (e.key === 'Escape') {
+            gayVideo.pause();
+            gayVideo.style.display = 'none';
+            window.removeEventListener('keydown', escListener);
+        }
+    });
+}
+
+
+// -------------------- Key Listeners --------------------
+window.addEventListener('keydown', (e) => {
+    // Prevent arrow up/down scrolling for Konami sequence
+    if (['ArrowUp', 'ArrowDown'].includes(e.key)) e.preventDefault();
+
+    typedKeys.push(e.key.toLowerCase());
+    konamiKeys.push(e.key);
+    gayKeys.push(e.key.toLowerCase());
+
+    // Show hint only when a partial trigger has been typed
+    if (typedKeys.join('').includes(doughnutTrigger)) showHint('Press [+] to confirm!');
+    if (konamiKeys.length > 0) showHint('Press [+] to confirm!');
+    if (gayKeys.join('').includes(gayTrigger)) showHint('Press [+] to confirm!');
+
+    // Confirm doughnut
+    if (typedKeys.join('').includes(doughnutTrigger) && e.key === '+') {
+        launchDoughnutGame();
+        typedKeys = [];
+    }
+
+    // Confirm Konami
+    if (konamiKeys.slice(-konamiCode.length - 1).join(',') === [...konamiCode, '+'].join(',')) {
+        launchButterflies();
+        konamiKeys = [];
+    }
+
+    // Confirm gay video
+    if (gayKeys.join('').includes(gayTrigger) && e.key === '+') {
+        launchGayVideo();
+        gayKeys = [];
     }
 });

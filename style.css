@@ -964,7 +964,8 @@ html {
     height: 140px;
     cursor: url('logos/help.png'), help;
     transition: transform 0.3s ease;
-    overflow: visible; /* Already here, keeps tooltip visible */
+    overflow: visible;
+    /* Already here, keeps tooltip visible */
 }
 
 .artist-item:hover {
@@ -1034,13 +1035,17 @@ html {
     font-size: 0.9rem;
     border: 1px solid var(--lavender-purple);
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
-    max-width: 700px;           /* wider tooltip */
-    text-align: center;         /* center text for better flow */
-    line-height: 1.5;           /* more breathing room */
+    max-width: 700px;
+    /* wider tooltip */
+    text-align: center;
+    /* center text for better flow */
+    line-height: 1.5;
+    /* more breathing room */
     opacity: 0;
     visibility: hidden;
     transition: opacity 0.3s ease, transform 0.3s ease;
-    white-space: normal;        /* allow wrapping */
+    white-space: normal;
+    /* allow wrapping */
     pointer-events: none;
     z-index: 50;
 }
@@ -1061,7 +1066,8 @@ html {
 .artist-item:hover .artist-tooltip {
     opacity: 1;
     visibility: visible;
-    transform: translateX(-50%) translateY(5px); /* smooth slide effect */
+    transform: translateX(-50%) translateY(5px);
+    /* smooth slide effect */
 }
 
 /* Responsive adjustments */
