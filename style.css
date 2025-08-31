@@ -1070,6 +1070,15 @@ html {
     /* smooth slide effect */
 }
 
+.orcid-logo {
+    width: 24px;
+    height: 24px;
+    vertical-align: middle;
+    margin-right: 6px;
+    filter: invert(1);
+    transition: filter 0.3s ease;
+}
+
 /* Back to Top Button */
 #back-to-top {
     position: fixed;
