@@ -1070,12 +1070,21 @@ html {
     /* smooth slide effect */
 }
 
+.orcid-text {
+    color: var(--text-muted);
+    font-size: 0.9rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 10px;
+    cursor: url('logos/pointer.png'), pointer;
+}
+
 .orcid-logo {
-    width: 24px;
-    height: 24px;
+    width: 5px;
+    height: 5px;
     vertical-align: middle;
     margin-right: 6px;
-    filter: invert(1);
     transition: filter 0.3s ease;
 }
 
