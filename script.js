@@ -524,7 +524,7 @@ function launchButterflies() {
 
 // -------------------- Gay Video Easter Egg --------------------
 const gayVideo = document.createElement('video');
-gayVideo.src = 'https://www.doughmination.win/common/gay.mp4'; //use cdn for performance
+gayVideo.src = 'https://www.yuri-lover.win/videos/gay.mp4'; //use cdn for performance
 gayVideo.preload = 'auto'; // Preload video data
 gayVideo.loop = true;       // Loop when playing
 gayVideo.style.display = 'none'; // Hidden initially
