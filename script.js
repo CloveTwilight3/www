@@ -86,61 +86,16 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 function setupTransitionButtons() {
-    // Syster button transition (slightly different twilight variant)
-    const systerButton = document.querySelector('.syster-button a');
-    if (systerButton) {
-        systerButton.addEventListener('click', (e) => {
-            e.preventDefault();
-            const url = systerButton.href;
-
-            // Syster's twilight color scheme (warmer purples)
-            const systerColors = {
-                '--cyan-dark': '#003f5c',
-                '--cyan-medium': '#2f6690',
-                '--cyan-light': '#84a9ac',
-                '--lavender-purple': '#9b7cb6',
-                '--diamond-pink': '#f8d7da',
-                '--diamond-cream': '#fff8dc',
-                '--text-light': '#f5f5f5',
-                '--text-muted': '#d1c7d8',
-                '--accent-glow': '#a388ee'
-            };
-
-            performTransition(url, systerColors, 'Changing to blossoming content...', '🪻');
-        });
-    }
-
-    // System button transition (deeper twilight variant)
-    const systemButton = document.querySelector('.system-button a');
-    if (systemButton) {
-        systemButton.addEventListener('click', (e) => {
-            e.preventDefault();
-            const url = systemButton.href;
-
-            // System colors (darker, more mysterious)
-            const systemColors = {
-                '--cyan-dark': '#1a0f2e',
-                '--cyan-medium': '#2f1b4a',
-                '--cyan-light': '#5b4b75',
-                '--lavender-purple': '#7b6cb6',
-                '--diamond-pink': '#d8c7da',
-                '--diamond-cream': '#f0e8dc',
-                '--accent-glow': '#8388ee'
-            };
-
-            performTransition(url, systemColors, 'Connecting to system hub...', '⭐');
-        });
-    }
 
     // Github button transition (deeper twilight variant)
-    const githubButton = document.querySelector('.github-button a');
-    if (githubButton) {
-        githubButton.addEventListener('click', (e) => {
+    const butterflyButton = document.querySelector('.butterfly-button a');
+    if (butterflyButton) {
+        butterflyButton.addEventListener('click', (e) => {
             e.preventDefault();
-            const url = githubButton.href;
+            const url = butterflyButton.href;
 
             // System colors (darker, more mysterious)
-            const githubColors = {
+            const butterflyColors = {
                 '--cyan-dark': '#1a0f2e',
                 '--cyan-medium': '#2f1b4a',
                 '--cyan-light': '#5b4b75',
@@ -150,7 +105,7 @@ function setupTransitionButtons() {
                 '--accent-glow': '#8388ee'
             };
 
-            performTransition(url, githubColors, 'Loading Github...', '🖥️');
+            performTransition(url, butterflyColors, 'Connecting to network...', '🦋');
         });
     }
 }
