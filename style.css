@@ -698,7 +698,7 @@ html {
 .butterfly-button {
     position: fixed;
     top: 20px;
-    left: 20px;
+    right: 20px;
     z-index: 1000;
     cursor: url('https://www.yuri-lover.win/cursors/clovetwilight3/pointer.png'), pointer;
 }
@@ -709,33 +709,27 @@ html {
     position: relative;
 }
 
-.butterfly-icon {
+.butterfly-image {
     width: 60px;
     height: 60px;
     border-radius: 50%;
     border: 3px solid var(--lavender-purple);
     box-shadow: 0 4px 15px rgba(163, 136, 238, 0.3);
     transition: all 0.3s ease;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background: rgba(42, 27, 61, 0.8);
-    backdrop-filter: blur(10px);
+    display: block;
     cursor: url('https://www.yuri-lover.win/cursors/clovetwilight3/pointer.png'), pointer;
-    color: var(--text-light);
 }
 
-.butterfly-icon:hover {
+.butterfly-image:hover {
     transform: scale(1.1);
     box-shadow: 0 6px 20px rgba(163, 136, 238, 0.5);
     border-color: var(--accent-glow);
-    background: rgba(42, 27, 61, 0.9);
 }
 
 .butterfly-badge {
     position: absolute;
     top: 50%;
-    left: 75px;
+    right: 75px;
     transform: translateY(-50%);
     background: rgba(42, 27, 61, 0.95);
     backdrop-filter: blur(10px);
@@ -753,15 +747,15 @@ html {
     cursor: url('https://www.yuri-lover.win/cursors/clovetwilight3/pointer.png'), pointer;
 }
 
-.butterfly-badge::before {
+.butterfly-badge::after {
     content: '';
     position: absolute;
     top: 50%;
-    left: -8px;
+    right: -8px;
     transform: translateY(-50%);
     width: 0;
     height: 0;
-    border-right: 8px solid rgba(42, 27, 61, 0.95);
+    border-left: 8px solid rgba(42, 27, 61, 0.95);
     border-top: 8px solid transparent;
     border-bottom: 8px solid transparent;
 }
@@ -769,7 +763,7 @@ html {
 .butterfly-button a:hover .butterfly-badge {
     opacity: 1;
     visibility: visible;
-    transform: translateY(-50%) translateX(5px);
+    transform: translateY(-50%) translateX(-5px);
 }
 
 /* Social Media Container for future buttons */
