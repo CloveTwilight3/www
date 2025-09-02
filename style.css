@@ -200,150 +200,6 @@ pre {
     display: none;
 }
 
-/* Syster Button Styles */
-.syster-button {
-    position: fixed;
-    top: 20px;
-    right: 20px;
-    z-index: 1000;
-    cursor: url('https://www.yuri-lover.win/cursors/clovetwilight3/pointer.png'), pointer;
-}
-
-.syster-button a {
-    display: block;
-    text-decoration: none;
-    position: relative;
-}
-
-.syster-image {
-    width: 60px;
-    height: 60px;
-    border-radius: 50%;
-    border: 3px solid var(--lavender-purple);
-    box-shadow: 0 4px 15px rgba(163, 136, 238, 0.3);
-    transition: all 0.3s ease;
-    display: block;
-    cursor: url('https://www.yuri-lover.win/cursors/clovetwilight3/pointer.png'), pointer;
-}
-
-.syster-image:hover {
-    transform: scale(1.1);
-    box-shadow: 0 6px 20px rgba(163, 136, 238, 0.5);
-    border-color: var(--accent-glow);
-}
-
-.syster-badge {
-    position: absolute;
-    top: 50%;
-    right: 75px;
-    transform: translateY(-50%);
-    background: rgba(42, 27, 61, 0.95);
-    backdrop-filter: blur(10px);
-    color: var(--text-light);
-    padding: 8px 12px;
-    border-radius: 20px;
-    font-size: 0.85rem;
-    font-weight: 500;
-    white-space: nowrap;
-    opacity: 0;
-    visibility: hidden;
-    transition: all 0.3s ease;
-    border: 1px solid var(--lavender-purple);
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
-    cursor: url('https://www.yuri-lover.win/cursors/clovetwilight3/pointer.png'), pointer;
-}
-
-.syster-badge::after {
-    content: '';
-    position: absolute;
-    top: 50%;
-    right: -8px;
-    transform: translateY(-50%);
-    width: 0;
-    height: 0;
-    border-left: 8px solid rgba(42, 27, 61, 0.95);
-    border-top: 8px solid transparent;
-    border-bottom: 8px solid transparent;
-}
-
-.syster-button a:hover .syster-badge {
-    opacity: 1;
-    visibility: visible;
-    transform: translateY(-50%) translateX(-5px);
-}
-
-/* System Button Styles */
-.system-button {
-    position: fixed;
-    top: 100px;
-    right: 20px;
-    z-index: 1000;
-    cursor: url('https://www.yuri-lover.win/cursors/clovetwilight3/pointer.png'), pointer;
-}
-
-.system-button a {
-    display: block;
-    text-decoration: none;
-    position: relative;
-}
-
-.system-image {
-    width: 60px;
-    height: 60px;
-    border-radius: 50%;
-    border: 3px solid var(--lavender-purple);
-    box-shadow: 0 4px 15px rgba(163, 136, 238, 0.3);
-    transition: all 0.3s ease;
-    display: block;
-    cursor: url('https://www.yuri-lover.win/cursors/clovetwilight3/pointer.png'), pointer;
-}
-
-.system-image:hover {
-    transform: scale(1.1);
-    box-shadow: 0 6px 20px rgba(163, 136, 238, 0.5);
-    border-color: var(--accent-glow);
-}
-
-.system-badge {
-    position: absolute;
-    top: 50%;
-    right: 75px;
-    transform: translateY(-50%);
-    background: rgba(42, 27, 61, 0.95);
-    backdrop-filter: blur(10px);
-    color: var(--text-light);
-    padding: 8px 12px;
-    border-radius: 20px;
-    font-size: 0.85rem;
-    font-weight: 500;
-    white-space: nowrap;
-    opacity: 0;
-    visibility: hidden;
-    transition: all 0.3s ease;
-    border: 1px solid var(--lavender-purple);
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
-    cursor: url('https://www.yuri-lover.win/cursors/clovetwilight3/pointer.png'), pointer;
-}
-
-.system-badge::after {
-    content: '';
-    position: absolute;
-    top: 50%;
-    right: -8px;
-    transform: translateY(-50%);
-    width: 0;
-    height: 0;
-    border-left: 8px solid rgba(42, 27, 61, 0.95);
-    border-top: 8px solid transparent;
-    border-bottom: 8px solid transparent;
-}
-
-.system-button a:hover .system-badge {
-    opacity: 1;
-    visibility: visible;
-    transform: translateY(-50%) translateX(-5px);
-}
-
 
 /* Scroll Animation Styles */
 .fade-in-element {
@@ -838,8 +694,8 @@ html {
 }
 
 
-/* GitHub Button Styles */
-.github-button {
+/* Butterfly Button Styles */
+.butterfly-button {
     position: fixed;
     top: 20px;
     left: 20px;
@@ -847,13 +703,13 @@ html {
     cursor: url('https://www.yuri-lover.win/cursors/clovetwilight3/pointer.png'), pointer;
 }
 
-.github-button a {
+.butterfly-button a {
     display: block;
     text-decoration: none;
     position: relative;
 }
 
-.github-icon {
+.butterfly-icon {
     width: 60px;
     height: 60px;
     border-radius: 50%;
@@ -869,14 +725,14 @@ html {
     color: var(--text-light);
 }
 
-.github-icon:hover {
+.butterfly-icon:hover {
     transform: scale(1.1);
     box-shadow: 0 6px 20px rgba(163, 136, 238, 0.5);
     border-color: var(--accent-glow);
     background: rgba(42, 27, 61, 0.9);
 }
 
-.github-badge {
+.butterfly-badge {
     position: absolute;
     top: 50%;
     left: 75px;
@@ -897,7 +753,7 @@ html {
     cursor: url('https://www.yuri-lover.win/cursors/clovetwilight3/pointer.png'), pointer;
 }
 
-.github-badge::before {
+.butterfly-badge::before {
     content: '';
     position: absolute;
     top: 50%;
@@ -910,7 +766,7 @@ html {
     border-bottom: 8px solid transparent;
 }
 
-.github-button a:hover .github-badge {
+.butterfly-button a:hover .butterfly-badge {
     opacity: 1;
     visibility: visible;
     transform: translateY(-50%) translateX(5px);
@@ -1221,7 +1077,7 @@ html {
         bottom: -65px;
     }
 
-    .github-button {
+    .butterfly-button {
         top: 15px;
         left: 15px;
     }
@@ -1231,19 +1087,19 @@ html {
         left: 15px;
     }
 
-    .github-icon {
+    .butterfly-icon {
         width: 50px;
         height: 50px;
         border-width: 2px;
     }
 
-    .github-badge {
+    .butterfly-badge {
         left: 60px;
         font-size: 0.8rem;
         padding: 6px 10px;
     }
 
-    .github-badge::before {
+    .butterfly-badge::before {
         border-width: 6px;
     }
 
@@ -1288,23 +1144,7 @@ html {
 
 @media (max-width: 480px) {
 
-    .system-button {
-        top: 70px;
-    }
-
-    .system-badge {
-        right: 55px;
-        font-size: 0.75rem;
-        padding: 5px 8px;
-    }
-
-    .syster-badge {
-        right: 55px;
-        font-size: 0.75rem;
-        padding: 5px 8px;
-    }
-
-    .github-badge {
+    .butterfly-badge {
         left: 55px;
         font-size: 0.75rem;
         padding: 5px 8px;
