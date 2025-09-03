@@ -92,7 +92,7 @@ function setupTransitionButtons() {
     if (butterflyButton) {
         butterflyButton.addEventListener('click', (e) => {
             e.preventDefault();
-            const url = butterflyButton.href;
+            const url = butterflyButton.dataset.url;
 
             // System colors (darker, more mysterious)
             const butterflyColors = {
